@@ -5,7 +5,7 @@ const config = {
   },
 
   ground: {
-    speed: 0.18,
+    speed: 0.2,
     height: 25
   },
 
@@ -16,17 +16,23 @@ const config = {
   },
 
   bird: {
-    initialX: 350,
-    initialY: 350,
-    wingPower: 0.8
+    initialX: 250,
+    initialY: 200,
+    wingPower: 0.7
   },
 
   towers: {
-    minHeight: 100,
-    maxHeight: 300
+    minSpawnTime: 1.5,
+    maxSpawnTime: 5,
+    missingProb: 0.3,
+    gap: {
+      maxDiff: 300,
+      upperBoundary: 100,
+      lowerBoundary: canvas.height - 100
+    }
   },
 
   physics: {
-    gravity: 0.002
+    gravity: 2
   }
 }

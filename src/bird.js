@@ -18,15 +18,15 @@ const bird = {
   },
 
   frontCircleCollides (tower) {
-    return geometry.rectangleInCircle(tower, {
+    return geometry.rectangleInCircle(tower.geometry(), {
       x: bird.x + 69,
       y: bird.y + 27,
-      r: 19
+      r: 17
     })
   },
 
   backCircleCollides (tower) {
-    return geometry.rectangleInCircle(tower, {
+    return geometry.rectangleInCircle(tower.geometry(), {
       x: bird.x + 43,
       y: bird.y + 30,
       r: 17
@@ -38,11 +38,11 @@ const bird = {
       bird.vy = -config.bird.wingPower
     }
 
-    bird.vy += config.physics.gravity * dt
+    bird.vy += config.physics.gravity * dt / 1000
     bird.y += bird.vy * dt
 
-    if (bird.y > canvas.height - 100) {
-      bird.y = canvas.height - 100
+    if (bird.y > canvas.height - 80) {
+      bird.y = canvas.height - 80
     }
   },
 

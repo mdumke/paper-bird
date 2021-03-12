@@ -14,8 +14,15 @@ const canvas = {
     canvas.ctx.fillText(text, x, y)
   },
 
-  drawImage: (img, x, y, dx, dy) => {
-    canvas.ctx.drawImage(img, x, y, dx, dy)
+  drawImageFlipped: (img, x, y, w, h) => {
+    canvas.ctx.save()
+    canvas.ctx.scale(1, -1)
+    canvas.ctx.drawImage(img, x, h - y, w, -h)
+    canvas.ctx.restore()
+  },
+
+  drawImage: (img, x, y, w, h) => {
+    canvas.ctx.drawImage(img, x, y, w, h)
   },
 
   drawCircle: (x, y, r) => {

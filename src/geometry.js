@@ -29,7 +29,17 @@ const geometry = {
 
   rectangleInCircle ({ x, y, width, height }, circle) {
     return (
-      geometry.horizontalLineInCircle({ x, y }, { x: x + width, y }, circle) ||
-      geometry.verticalLineInCircle({ x, y }, { x, y: y + height }, circle))
+      geometry.horizontalLineInCircle(
+        { x, y },
+        { x: x + width, y },
+        circle) ||
+      geometry.horizontalLineInCircle(
+        { x, y: y + height },
+        { x: x + width, y: y + height},
+        circle) ||
+      geometry.verticalLineInCircle(
+        { x, y },
+        { x, y: y + height },
+        circle))
   }
 }

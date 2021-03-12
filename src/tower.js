@@ -1,19 +1,24 @@
 class Tower {
-  constructor () {
+  constructor (y, orientation = 1) {
     this.img = images.tower
     this.x = canvas.width + this.img.width
-    this.y = this.getRandomHeight()
+    this.y = y
     this.width = this.img.width
     this.height = this.y
-  }
-
-  getRandomHeight () {
-    let { minHeight: min, maxHeight: max } = config.towers
-    return canvas.height - (min + Math.random() * (max - min))
+    this.orientation = orientation
   }
 
   isVisible () {
     return this.x > -this.img.width
+  }
+
+  geometry () {
+    return {
+      x: this.x,
+      y: this.y - (this.orientation == -1) * this.height,
+      width: this.width,
+      height: this.height
+    }
   }
 
   update (dt) {
@@ -21,7 +26,11 @@ class Tower {
   }
 
   draw () {
-    canvas.drawImage(
+    const drawFn = this.orientation === 1
+      ? canvas.drawImage
+      : canvas.drawImageFlipped
+
+    drawFn(
       this.img,
       this.x,
       this.y,

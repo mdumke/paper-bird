@@ -57,6 +57,7 @@ const testRectangleInCircle = () => {
   assert(rectangleInCircle({ x: 200, y: 200, width: 100, height: 200 }, circle))
   assert(rectangleInCircle({ x: 200, y: 0, width: 100, height: 400 }, circle))
   assert(!rectangleInCircle({ x: 200, y: 0, width: 100, height: 200 }, circle))
+  assert(rectangleInCircle({ x: 100, y: 0, width: 100, height: 200 }, circle))
 }
 
 testPointInCircle()
