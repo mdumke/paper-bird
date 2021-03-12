@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paper Bird</title>
+  <link rel="shortcut icon" type="image/ico" href="favicon.ico"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      margin-top: 20px;
+      background-color: #333;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 95vh;
+    }
+    .canvas-wrapper {
+      background-repeat: no-repeat;
+      width: 1066px;
+      height: 600px;
+    }
+    #canvas {
+      /*cursor: none; */
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas-wrapper">
+    <canvas id="canvas" width="1066" height="600"></canvas>
+  </div>
+
+  <script src="src/config.js"></script>
+  <script src="src/geometry.js"></script>
+  <script src="src/images.js"></script>
+  <script src="src/background.js"></script>
+  <script src="src/ground.js"></script>
+  <script src="src/flower.js"></script>
+  <script src="src/flowers.js"></script>
+  <script src="src/tower.js"></script>
+  <script src="src/towers.js"></script>
+  <script src="src/canvas.js"></script>
+  <script src="src/graphics.js"></script>
+  <script src="src/bird.js"></script>
+  <script src="src/loop.js"></script>
+  <script src="src/controls.js"></script>
+  <script src="index.js"></script>
+
+  <script src="src/geometry.test.js"></script>
+
+  <script>
+    (() => {
+      document.querySelector('.canvas-wrapper').style.backgroundImage =
+        "url('assets/images/paper.png')"
+
+      game.main()
+    })()
+  </script>
+</body>
+</html>
