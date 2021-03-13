@@ -1,6 +1,6 @@
 const flowers = {
   spawnTimer: 0,
-  nextSpawnTime: config.flowers.minSpawnTime,
+  nextSpawnTime: config.flowers.initialSpawnTime,
   instances: [],
 
   spawn () {

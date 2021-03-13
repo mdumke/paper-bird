@@ -1,7 +1,7 @@
 const towers = {
   prevGap: canvas.height / 2,
   spawnTimer: 0,
-  spawnTime: config.towers.minSpawnTime,
+  spawnTime: config.towers.initialSpawnTime,
   instances: [],
 
   draw () {
@@ -47,7 +47,7 @@ const towers = {
 
   getPosition () {
     let gap = config.towers.gap
-    let size = utils.sample([200, 250, 300, 350])
+    let size = utils.sample([200, 250, 300])
     let newGap = towers.prevGap + utils.urand(-gap.maxDiff / 2, gap.maxDiff / 2)
 
     newGap = Math.max(newGap, gap.upperBoundary)

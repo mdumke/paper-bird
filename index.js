@@ -2,18 +2,16 @@ const game = {
   draw () {
     canvas.clear()
     background.draw()
-    towers.draw()
-    bird.draw()
+    stateMachine.draw()
     ground.draw()
     flowers.draw()
   },
 
   update (dt) {
     background.update(dt)
-    bird.update(dt)
     ground.update(dt)
     flowers.update(dt)
-    towers.update(dt)
+    stateMachine.update(dt)
   },
 
   async init () {
@@ -24,12 +22,20 @@ const game = {
     await images.load()
   },
 
+  registerStates () {
+    stateMachine.register('play', playState)
+    stateMachine.register('title', titleState)
+  },
+
   async main () {
     await game.init()
+    game.registerStates()
+    stateMachine.change('title')
 
     loop.start(dt => {
       game.update(dt),
       game.draw()
     })
+
   }
 }

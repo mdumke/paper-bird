@@ -10,21 +10,23 @@ const config = {
   },
 
   flowers: {
+    initialSpawnTime: 2,
     minSpawnTime: 3,
-    maxSpawnTime: 15,
+    maxSpawnTime: 6,
     offsetY: 7
   },
 
   bird: {
-    initialX: 250,
+    initialX: 280,
     initialY: 200,
     wingPower: 0.7
   },
 
   towers: {
-    minSpawnTime: 1.5,
-    maxSpawnTime: 5,
-    missingProb: 0.3,
+    initialSpawnTime: 0.5,
+    minSpawnTime: 1,
+    maxSpawnTime: 3,
+    missingProb: 0.2,
     gap: {
       maxDiff: 300,
       upperBoundary: 100,
@@ -33,6 +35,6 @@ const config = {
   },
 
   physics: {
-    gravity: 2
+    gravity: 2.2
   }
 }
