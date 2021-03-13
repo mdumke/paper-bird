@@ -25,6 +25,7 @@ const game = {
   registerStates () {
     stateMachine.register('play', playState)
     stateMachine.register('title', titleState)
+    stateMachine.register('collision', collisionState)
   },
 
   async main () {
@@ -36,6 +37,5 @@ const game = {
       game.update(dt),
       game.draw()
     })
-
   }
 }

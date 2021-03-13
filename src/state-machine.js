@@ -11,13 +11,12 @@ const stateMachine = {
       stateMachine.currentState.exit()
     }
 
-    try {
-      stateMachine.currentState = stateMachine.states[key]
-    } catch (e) {
+    if (!stateMachine.states[key]) {
       throw new Error(`State ${key} not registered`, e)
       loop.stop()
     }
 
+    stateMachine.currentState = stateMachine.states[key]
     stateMachine.currentState.enter()
   },
 

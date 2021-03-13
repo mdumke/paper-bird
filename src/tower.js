@@ -6,6 +6,7 @@ class Tower {
     this.width = this.img.width
     this.height = this.y
     this.orientation = orientation
+    this.scored = false
   }
 
   isVisible () {
@@ -36,5 +37,9 @@ class Tower {
       this.y,
       this.img.width,
       this.img.height)
+  }
+
+  hasPassedBird () {
+    return this.x + this.width - 10 < bird.x
   }
 }

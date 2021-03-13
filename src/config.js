@@ -17,7 +17,7 @@ const config = {
   },
 
   bird: {
-    initialX: 280,
+    initialX: 300,
     initialY: 200,
     wingPower: 0.7
   },
@@ -28,6 +28,7 @@ const config = {
     maxSpawnTime: 3,
     missingProb: 0.2,
     gap: {
+      sizes: [300],
       maxDiff: 300,
       upperBoundary: 100,
       lowerBoundary: canvas.height - 100
@@ -35,6 +36,6 @@ const config = {
   },
 
   physics: {
-    gravity: 2.2
+    gravity: 2.1
   }
 }

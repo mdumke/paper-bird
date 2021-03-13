@@ -46,9 +46,13 @@ const bird = {
     }
   },
 
-  init (x, y) {
+  reset () {
     bird.x = config.bird.initialX
     bird.y = config.bird.initialY
     bird.vy = 0
+  },
+
+  init () {
+    bird.reset()
   }
 }
