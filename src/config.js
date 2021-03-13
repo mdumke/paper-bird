@@ -28,7 +28,7 @@ const config = {
     maxSpawnTime: 3,
     missingProb: 0.2,
     gap: {
-      sizes: [300],
+      sizes: [200, 250, 300],
       maxDiff: 300,
       upperBoundary: 100,
       lowerBoundary: canvas.height - 100
