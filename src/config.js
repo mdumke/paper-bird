@@ -26,7 +26,7 @@ const config = {
     initialSpawnTime: 0.5,
     minSpawnTime: 1,
     maxSpawnTime: 3,
-    missingProb: 0.2,
+    missingProb: 0,
     gap: {
       sizes: [200, 250, 300],
       maxDiff: 300,

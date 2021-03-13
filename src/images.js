@@ -9,7 +9,10 @@ const images = {
     { name: 'bird', fileName: 'bird.png' },
     { name: 'tower', fileName: 'tower.png' },
     { name: 'wingUp', fileName: 'wing-up.png' },
-    { name: 'wingDown', fileName: 'wing-down.png' }
+    { name: 'wingDown', fileName: 'wing-down.png' },
+    { name: 'pow1', fileName: 'pow1.png' },
+    { name: 'pow2', fileName: 'pow2.png' },
+    { name: 'pow3', fileName: 'pow3.png' }
   ],
 
   load: async () => {

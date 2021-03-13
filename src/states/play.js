@@ -34,7 +34,7 @@ const playState = {
     for (let t of towers.instances) {
       if (t.hasPassedBird() && !t.scored) {
         t.scored = true
-        playState.score++
+        playState.score += 0.5
       }
     }
   }

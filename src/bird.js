@@ -33,7 +33,12 @@ const bird = {
     })
   },
 
-  update (dt) {
+  update (dt, moveHorizontally = false) {
+    if (moveHorizontally) {
+      bird.x -= config.ground.speed * dt
+      return
+    }
+
     if (controls.spaceBarPressed && bird.vy > 0) {
       bird.vy = -config.bird.wingPower
     }

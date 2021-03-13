@@ -5,7 +5,6 @@ const geometry = {
 
   horizontalLineInCircle (left, right, circle) {
     if (left.x > right.x) {
-      loop.stop()
       throw new Error('Left point must be given first, got', left, right)
     }
 
@@ -17,7 +16,6 @@ const geometry = {
 
   verticalLineInCircle (upper, lower, circle) {
     if (upper.y > lower.y) {
-      loop.stop()
       throw new Error(`Upper point must be given first, got ${upper.y} before ${lower.y}`)
     }
 
