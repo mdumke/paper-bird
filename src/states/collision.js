@@ -1,6 +1,12 @@
 const collisionState = {
   ...state,
 
+  time: 0,
+
+  enter () {
+    collisionState.time = 0
+  },
+
   draw () {
     towers.draw()
     bird.draw()
@@ -13,9 +19,9 @@ const collisionState = {
   },
 
   update (dt) {
-    towers.update(dt)
+    collisionState.time += dt / 1000
 
-    if (controls.spaceBarPressed) {
+    if (collisionState.time > 2 && controls.spaceBarPressed) {
       stateMachine.change('play')
     }
   }
