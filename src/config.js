@@ -11,8 +11,8 @@ const config = {
 
   flowers: {
     initialSpawnTime: 2,
-    minSpawnTime: 3,
-    maxSpawnTime: 6,
+    minSpawnTime: 2,
+    maxSpawnTime: 5,
     offsetY: 7
   },
 
@@ -23,13 +23,13 @@ const config = {
   },
 
   towers: {
-    initialSpawnTime: 0.5,
+    initialSpawnTime: 6.6,
     minSpawnTime: 1,
-    maxSpawnTime: 3,
+    maxSpawnTime: 2.5,
     missingProb: 0,
     gap: {
-      sizes: [200, 250, 300],
-      maxDiff: 300,
+      sizes: [200, 220, 250, 300],
+      maxDiff: 350,
       upperBoundary: 100,
       lowerBoundary: canvas.height - 100
     }

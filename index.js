@@ -18,6 +18,7 @@ const game = {
     canvas.init()
     bird.init()
     controls.init()
+    audio.init()
     graphics.displayLoadingMessage()
     await images.load()
   },
@@ -26,6 +27,7 @@ const game = {
     stateMachine.register('play', playState)
     stateMachine.register('title', titleState)
     stateMachine.register('collision', collisionState)
+    stateMachine.register('retry', retryState)
   },
 
   async main () {

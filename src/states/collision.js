@@ -24,27 +24,24 @@ const collisionState = {
   enter () {
     collisionState.time = 0
     collisionState.explosion = new Explosion()
+    audio.play('explosion')
   },
 
   draw () {
     towers.draw()
     collisionState.explosion.draw()
 
-    if (collisionState.time > 2) {
-      canvas.drawText(
-        'Press SPACE to try again', 250, 250, '#444', 24, 'monospace')
-    }
   },
 
   update (dt) {
-    towers.update(dt)
+    towers.update(dt, false)
     bird.update(dt, true)
     collisionState.explosion.update(dt)
 
     collisionState.time += dt / 1000
 
-    if (collisionState.time > 1 && controls.spaceBarPressed) {
-      stateMachine.change('play')
+    if (collisionState.time > 5) {
+      stateMachine.change('retry')
     }
   }
 }

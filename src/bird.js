@@ -41,6 +41,7 @@ const bird = {
 
     if (controls.spaceBarPressed && bird.vy > 0) {
       bird.vy = -config.bird.wingPower
+      audio.play('flap', 0.7)
     }
 
     bird.vy += config.physics.gravity * dt / 1000

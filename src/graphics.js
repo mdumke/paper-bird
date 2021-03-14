@@ -4,7 +4,7 @@ const graphics = {
   },
 
   displayScore: score => {
-    canvas.drawText(String(score), 20, 40, '#444', 32, 'monospace')
+    canvas.drawText(String(score), 20, 48, '#444', 40, 'monospace')
   }
 }
 

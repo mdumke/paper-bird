@@ -8,9 +8,11 @@ const towers = {
     towers.instances.forEach(f => f.draw())
   },
 
-  update (dt) {
+  update (dt, spawnNew = true) {
     towers.instances.forEach(t => t.update(dt))
     towers.instances = towers.instances.filter(t => t.isVisible())
+
+    if (!spawnNew) return
 
     towers.spawnTimer += dt / 1000
 

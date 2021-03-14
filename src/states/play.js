@@ -7,6 +7,8 @@ const playState = {
     playState.score = 0
     bird.reset()
     towers.reset()
+    audio.play('ambience')
+    audio.play('music', 0.5)
   },
 
   draw () {
@@ -20,6 +22,11 @@ const playState = {
     bird.update(dt)
     playState.checkCollisions()
     playState.updateScore()
+  },
+
+  exit () {
+    audio.pause('ambience')
+    audio.pause('music')
   },
 
   checkCollisions () {
