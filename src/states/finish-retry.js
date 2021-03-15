@@ -1,11 +1,11 @@
-const retryState = {
+const finishRetryState = {
   ...state,
 
   time: 0,
 
   enter () {
-    retryState.time = 0
-    audio.play('gameOver', 0.5)
+    finishRetryState.time = 0
+    audio.play('gameOver')
   },
 
   draw () {
@@ -13,24 +13,20 @@ const retryState = {
     towers.draw()
     ground.draw()
     flowers.draw()
+    nest.draw()
 
     canvas.drawText('Game Over', 200, 160, 40)
     canvas.drawText(`Score: ${playState.score || 0} points`, 200, 200, 24)
 
-    if (retryState.time > 7) {
+    if (finishRetryState.time > 7) {
       canvas.drawText('Press SPACE to try again', 200, 340, 24)
     }
   },
 
   update (dt) {
-    background.update(dt)
-    ground.update(dt)
-    flowers.update(dt)
-    towers.update(dt, false)
+    finishRetryState.time += dt / 1000
 
-    retryState.time += dt / 1000
-
-    if (retryState.time > 7 && controls.spaceBarPressed) {
+    if (finishRetryState.time > 7 && controls.spaceBarPressed) {
       stateMachine.change('play')
     }
   }

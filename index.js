@@ -1,16 +1,10 @@
 const game = {
   draw () {
     canvas.clear()
-    background.draw()
     stateMachine.draw()
-    ground.draw()
-    flowers.draw()
   },
 
   update (dt) {
-    background.update(dt)
-    ground.update(dt)
-    flowers.update(dt)
     stateMachine.update(dt)
   },
 
@@ -28,11 +22,16 @@ const game = {
     stateMachine.register('title', titleState)
     stateMachine.register('collision', collisionState)
     stateMachine.register('retry', retryState)
+    stateMachine.register('finish', finishState)
+    stateMachine.register('finish-collision', finishCollisionState)
+    stateMachine.register('finish-retry', finishRetryState)
+    stateMachine.register('win', winState)
   },
 
   async main () {
     await game.init()
     game.registerStates()
+    audio.play('ambience')
     stateMachine.change('title')
 
     loop.start(dt => {

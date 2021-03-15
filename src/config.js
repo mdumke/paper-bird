@@ -22,14 +22,20 @@ const config = {
     wingPower: 0.7
   },
 
+  nest: {
+    waitTime: 1,
+    y: 330
+  },
+
   towers: {
-    initialSpawnTime: 6.6,
-    minSpawnTime: 1,
+    //initialSpawnTime: 6.6,
+    initialSpawnTime: 0,
+    minSpawnTime: 1.4,
     maxSpawnTime: 2.5,
-    missingProb: 0,
+    maxNumber: 1,
     gap: {
-      sizes: [200, 220, 250, 300],
-      maxDiff: 350,
+      sizes: [210, 220, 250, 300],
+      maxDiff: 400,
       upperBoundary: 100,
       lowerBoundary: canvas.height - 100
     }

@@ -1,11 +1,12 @@
 const towers = {
   prevGap: canvas.height / 2,
+  nSpawned: 0,
   spawnTimer: 0,
   spawnTime: config.towers.initialSpawnTime,
   instances: [],
 
   draw () {
-    towers.instances.forEach(f => f.draw())
+    towers.instances.forEach(t => t.draw())
   },
 
   update (dt, spawnNew = true) {
@@ -31,15 +32,19 @@ const towers = {
   },
 
   spawn () {
+    if (towers.nSpawned >= config.towers.maxNumber) {
+      return
+    }
+
     const { gap, gapSize } = towers.getPosition()
 
-    if (Math.random() > config.towers.missingProb) {
-      towers.instances.push(new Tower(gap, -1))
-    }
+    towers.instances.push(new Tower(gap, -1))
+    towers.instances.push(new Tower(gap + gapSize))
+    towers.nSpawned++
+  },
 
-    if (Math.random() > config.towers.missingProb) {
-      towers.instances.push(new Tower(gap + gapSize))
-    }
+  spawnAt (gap, orientation = 1) {
+    towers.instances.push(new Tower(gap, orientation))
   },
 
   setSpawnTime () {

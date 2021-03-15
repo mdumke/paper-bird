@@ -12,7 +12,7 @@ const stateMachine = {
     }
 
     if (!stateMachine.states[key]) {
-      throw new Error(`State ${key} not registered`, e)
+      throw new Error(`State ${key} not registered`)
       loop.stop()
     }
 

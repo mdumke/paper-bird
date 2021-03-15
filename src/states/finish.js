@@ -1,0 +1,89 @@
+const finishState = {
+  ...state,
+
+  time: 0,
+
+  towers: [
+    {
+      spawned: false,
+      spawnTime: config.nest.waitTime,
+      position: 400,
+      orientation: 1
+    },
+    {
+      spawned: false,
+      spawnTime: config.nest.waitTime + 0.45,
+      position: 400,
+      orientation: 1
+    },
+    {
+      spawned: false,
+      spawnTime: config.nest.waitTime + 0.9,
+      position: 400,
+      orientation: 1
+    },
+    {
+      spawned: false,
+      spawnTime: config.nest.waitTime + 0.9,
+      position: 410,
+      orientation: -1
+    }
+  ],
+
+  enter () {
+    nest.reset()
+    finishState.time = 0
+  },
+
+  draw () {
+    background.draw()
+    bird.draw()
+    towers.draw()
+    ground.draw()
+    flowers.draw()
+    graphics.displayScore(playState.score)
+    nest.draw()
+    bird.collidesWithNest(nest)
+  },
+
+  update(dt) {
+    finishState.towers.forEach(t => {
+      if (!t.spawned && finishState.time > t.spawnTime) {
+        towers.spawnAt(t.position, t.orientation)
+        t.spawned = true
+      }
+    })
+
+    if (finishState.time < config.nest.waitTime + 0.45) {
+      nest.reset()
+    }
+
+
+    finishState.time += dt / 1000
+
+    if (finishState.time < config.nest.waitTime + 1.9) {
+      background.update(dt)
+      ground.update(dt)
+      flowers.update(dt)
+      towers.update(dt, false)
+      nest.update(dt)
+      bird.update(dt)
+    } else {
+      bird.update(dt, true, 1)
+    }
+
+    finishState.checkCollisions()
+  },
+
+  checkCollisions () {
+    if (bird.collidesWithNest(nest)) {
+      stateMachine.change('win')
+    }
+
+    for (let t of towers.instances) {
+      if (bird.collidesWithTower(t)) {
+        stateMachine.change('finish-collision')
+      }
+    }
+  }
+}

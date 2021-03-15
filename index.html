@@ -25,7 +25,7 @@
       height: 600px;
     }
     #canvas {
-      /*cursor: none; */
+      cursor: none;
     }
   </style>
 </head>
@@ -39,6 +39,7 @@
   <audio id="flap" src="assets/audio/flap.mp3"></audio>
   <audio id="music" src="assets/audio/music.mp3"></audio>
   <audio id="game-over" src="assets/audio/game-over.mp3"></audio>
+  <audio id="ending" src="assets/audio/ending.mp3"></audio>
 
   <script src="src/audio.js"></script>
   <script src="src/config.js"></script>
@@ -54,6 +55,7 @@
   <script src="src/canvas.js"></script>
   <script src="src/graphics.js"></script>
   <script src="src/bird.js"></script>
+  <script src="src/nest.js"></script>
   <script src="src/loop.js"></script>
   <script src="src/controls.js"></script>
   <script src="src/explosion.js"></script>
@@ -63,6 +65,10 @@
   <script src="src/states/play.js"></script>
   <script src="src/states/collision.js"></script>
   <script src="src/states/retry.js"></script>
+  <script src="src/states/finish.js"></script>
+  <script src="src/states/finish-collision.js"></script>
+  <script src="src/states/finish-retry.js"></script>
+  <script src="src/states/win.js"></script>
   <script src="index.js"></script>
 
   <script src="src/geometry.test.js"></script>

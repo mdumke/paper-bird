@@ -11,33 +11,38 @@ const bird = {
       : canvas.ctx.drawImage(images.wingDown, bird.x + 28, bird.y + 25)
   },
 
-  collidesWith (tower) {
+  collidesWithTower (tower) {
     return (
-      bird.frontCircleCollides(tower) ||
-      bird.backCircleCollides(tower))
+      bird.frontCircleCollidesWithRect(tower.geometry()) ||
+      bird.backCircleCollidesWithRect(tower.geometry()))
   },
 
-  frontCircleCollides (tower) {
-    return geometry.rectangleInCircle(tower.geometry(), {
+  collidesWithNest (nest) {
+    return (
+      bird.frontCircleCollidesWithRect(nest.geometry()) ||
+      bird.backCircleCollidesWithRect(nest.geometry()))
+  },
+
+  frontCircleCollidesWithRect (rect) {
+    return geometry.rectangleInCircle(rect, {
       x: bird.x + 69,
       y: bird.y + 27,
       r: 17
     })
   },
 
-  backCircleCollides (tower) {
-    return geometry.rectangleInCircle(tower.geometry(), {
+  backCircleCollidesWithRect (rect) {
+    return geometry.rectangleInCircle(rect, {
       x: bird.x + 43,
       y: bird.y + 30,
       r: 17
     })
   },
 
-  update (dt, moveHorizontally = false) {
-    if (moveHorizontally) {
-      bird.x -= config.ground.speed * dt
-      return
-    }
+  update (dt, moveY = true, xDirection = 0) {
+    bird.x += xDirection * config.ground.speed * dt
+
+    if (!moveY) return
 
     if (controls.spaceBarPressed && bird.vy > 0) {
       bird.vy = -config.bird.wingPower
@@ -47,8 +52,8 @@ const bird = {
     bird.vy += config.physics.gravity * dt / 1000
     bird.y += bird.vy * dt
 
-    if (bird.y > canvas.height - 80) {
-      bird.y = canvas.height - 80
+    if (bird.y > canvas.height - 76) {
+      bird.y = canvas.height - 76
     }
   },
 

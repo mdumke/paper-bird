@@ -1,10 +1,10 @@
 const graphics = {
   displayLoadingMessage: () => {
-    canvas.drawText('Loading...', 200, 200, '#444', 20, 'monospace')
+    canvas.drawText('Loading...', 200, 200, 20)
   },
 
   displayScore: score => {
-    canvas.drawText(String(score), 20, 48, '#444', 40, 'monospace')
+    canvas.drawText(String(score || 0), 20, 48, 40)
   }
 }
 

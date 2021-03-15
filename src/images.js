@@ -12,7 +12,8 @@ const images = {
     { name: 'wingDown', fileName: 'wing-down.png' },
     { name: 'pow1', fileName: 'pow1.png' },
     { name: 'pow2', fileName: 'pow2.png' },
-    { name: 'pow3', fileName: 'pow3.png' }
+    { name: 'pow3', fileName: 'pow3.png' },
+    { name: 'nest', fileName: 'nest.png' }
   ],
 
   load: async () => {
