@@ -9,14 +9,13 @@ const playState = {
     bird.reset()
     towers.reset()
     audio.play('music', 0.3)
-    audio.sounds.ambience.loop = true
   },
 
   draw () {
     background.draw()
     towers.draw()
-    bird.draw()
     ground.draw()
+    bird.draw()
     flowers.draw()
 
     if (playState.score > 0) {
@@ -57,7 +56,7 @@ const playState = {
       if (t.hasPassedBird() && !t.scored) {
         t.scored = true
         playState.score += 1
-        audio.play('pling', 0.4)
+        audio.play('pling', 0.5)
       }
     }
   }

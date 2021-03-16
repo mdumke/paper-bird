@@ -13,13 +13,13 @@ const game = {
     bird.init()
     controls.init()
     audio.init()
-    graphics.displayLoadingMessage()
     await images.load()
   },
 
   registerStates () {
-    stateMachine.register('play', playState)
+    stateMachine.register('init', initState)
     stateMachine.register('title', titleState)
+    stateMachine.register('play', playState)
     stateMachine.register('collision', collisionState)
     stateMachine.register('retry', retryState)
     stateMachine.register('finish', finishState)
@@ -31,8 +31,7 @@ const game = {
   async main () {
     await game.init()
     game.registerStates()
-    audio.play('ambience')
-    stateMachine.change('title')
+    stateMachine.change('init')
 
     loop.start(dt => {
       game.update(dt),

@@ -31,6 +31,7 @@ const finishState = {
   ],
 
   enter () {
+    audio.play('ambience')
     nest.reset()
     finishState.time = 0
     finishState.towers.forEach(t => t.spawned = false)
@@ -38,9 +39,9 @@ const finishState = {
 
   draw () {
     background.draw()
-    bird.draw()
     towers.draw()
     ground.draw()
+    bird.draw()
     flowers.draw()
     graphics.displayScore(playState.score)
     nest.draw()

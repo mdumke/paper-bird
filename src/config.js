@@ -28,10 +28,11 @@ const config = {
   },
 
   towers: {
-    initialSpawnTime: 6.6,
+    //initialSpawnTime: 6.6,
+    initialSpawnTime: 0,
     minSpawnTime: 1.3,
     maxSpawnTime: 2.5,
-    maxNumber: 100,
+    maxNumber: 5,
     gap: {
       sizes: [200, 220, 250, 300],
       maxDiff: 500,

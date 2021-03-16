@@ -52,8 +52,8 @@ const bird = {
     bird.vy += config.physics.gravity * dt / 1000
     bird.y += bird.vy * dt
 
-    if (bird.y > canvas.height - 76) {
-      bird.y = canvas.height - 76
+    if (bird.y > canvas.height - 74) {
+      bird.y = canvas.height - 74
     }
   },
 

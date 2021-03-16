@@ -2,7 +2,6 @@ const audio = {
   soundOn: true,
 
   init () {
-    audio.sounds.ambience.loop = true
     audio.sounds.music.loop = true
   },
 
