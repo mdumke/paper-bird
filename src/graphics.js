@@ -9,9 +9,9 @@ const graphics = {
 
   displayPlayIcon () {
     canvas.drawTriangle(
-      { x: 450, y: 230 },
-      { x: 450 + 140 * Math.cos(Math.PI / 6), y: 300 },
-      { x: 450, y: 370 }
+      { x: 465, y: 245 },
+      { x: 465 + 110 * Math.cos(Math.PI / 6), y: 300 },
+      { x: 465, y: 355 }
     )
   },
 
