@@ -23,19 +23,18 @@ const config = {
   },
 
   nest: {
-    waitTime: 1,
+    waitTime: 10,
     y: 330
   },
 
   towers: {
-    //initialSpawnTime: 6.6,
-    initialSpawnTime: 0,
-    minSpawnTime: 1.4,
+    initialSpawnTime: 6.6,
+    minSpawnTime: 1.3,
     maxSpawnTime: 2.5,
-    maxNumber: 1,
+    maxNumber: 100,
     gap: {
-      sizes: [210, 220, 250, 300],
-      maxDiff: 400,
+      sizes: [200, 220, 250, 300],
+      maxDiff: 500,
       upperBoundary: 100,
       lowerBoundary: canvas.height - 100
     }

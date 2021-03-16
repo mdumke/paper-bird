@@ -9,15 +9,19 @@ const playState = {
     bird.reset()
     towers.reset()
     audio.play('music', 0.3)
+    audio.sounds.ambience.loop = true
   },
 
   draw () {
     background.draw()
     towers.draw()
     bird.draw()
-    graphics.displayScore(playState.score)
     ground.draw()
     flowers.draw()
+
+    if (playState.score > 0) {
+      graphics.displayScore(playState.score)
+    }
   },
 
   update (dt) {
@@ -48,9 +52,12 @@ const playState = {
 
   updateScore () {
     for (let t of towers.instances) {
+      if (t.orientation === -1) continue
+
       if (t.hasPassedBird() && !t.scored) {
         t.scored = true
-        playState.score += 0.5
+        playState.score += 1
+        audio.play('pling', 0.4)
       }
     }
   }

@@ -29,6 +29,7 @@ const audio = {
     flap: document.querySelector('#flap'),
     gameOver: document.querySelector('#game-over'),
     explosion: document.querySelector('#explosion'),
-    ending: document.querySelector('#ending')
+    ending: document.querySelector('#ending'),
+    pling: document.querySelector('#pling')
   }
 }

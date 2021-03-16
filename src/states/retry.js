@@ -15,7 +15,9 @@ const retryState = {
     flowers.draw()
 
     canvas.drawText('Game Over', 200, 160, 40)
-    canvas.drawText(`Score: ${playState.score || 0} points`, 200, 200, 24)
+    canvas.drawText(
+      `Score: ${playState.score || 0} point${playState.score == 1 ? '' : 's'}`,
+      200, 200, 24)
 
     if (retryState.time > 7) {
       canvas.drawText('Press SPACE to try again', 200, 340, 24)

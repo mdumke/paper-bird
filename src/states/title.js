@@ -1,6 +1,10 @@
 const titleState = {
   ...state,
 
+  enter () {
+    audio.sounds.ambience.loop = false
+  },
+
   draw () {
     background.draw()
     ground.draw()

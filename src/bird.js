@@ -44,7 +44,7 @@ const bird = {
 
     if (!moveY) return
 
-    if (controls.spaceBarPressed && bird.vy > 0) {
+    if (controls.spaceBarPressed && bird.vy > -0.2) {
       bird.vy = -config.bird.wingPower
       audio.play('flap', 0.7)
     }

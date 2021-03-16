@@ -33,6 +33,7 @@ const finishState = {
   enter () {
     nest.reset()
     finishState.time = 0
+    finishState.towers.forEach(t => t.spawned = false)
   },
 
   draw () {

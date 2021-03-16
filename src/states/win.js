@@ -6,7 +6,9 @@ const winState = {
 
   enter () {
     audio.play('ending')
+    audio.sounds.ambience.loop = false
     winState.time = 0
+    winState.changeState = false
   },
 
   draw () {
@@ -36,7 +38,7 @@ const winState = {
   update (dt) {
     winState.time += dt / 1000
 
-    if (winState.time > 25 && controls.spaceBarPressed) {
+    if (winState.time > 18 && controls.spaceBarPressed) {
       winState.changeState = true
     }
 
