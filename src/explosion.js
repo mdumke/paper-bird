@@ -41,8 +41,8 @@ class Explosion {
     switch (id) {
       case 1:
         canvas.drawImage(images.pow1,
-          bird.x - 50, bird.y - 30,
-          images.pow1.width * 0.9, images.pow1.height * 1)
+          bird.x - 54, bird.y - 30,
+          images.pow1.width * 1.0, images.pow1.height * 1.0)
         break
       case 2:
         canvas.drawImage(images.pow2,
