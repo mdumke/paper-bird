@@ -62,7 +62,7 @@ const finishState = {
 
     finishState.time += dt / 1000
 
-    if (finishState.time < config.nest.waitTime + 1.4) {
+    if (finishState.time < config.nest.waitTime + 1.35) {
       background.update(dt)
       ground.update(dt)
       flowers.update(dt)
