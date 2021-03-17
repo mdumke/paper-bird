@@ -12,19 +12,19 @@ const finishState = {
     },
     {
       spawned: false,
-      spawnTime: config.nest.waitTime + 0.45,
+      spawnTime: config.nest.waitTime + 0.365,
       position: 400,
       orientation: 1
     },
     {
       spawned: false,
-      spawnTime: config.nest.waitTime + 0.9,
+      spawnTime: config.nest.waitTime + 0.71,
       position: 400,
       orientation: 1
     },
     {
       spawned: false,
-      spawnTime: config.nest.waitTime + 0.9,
+      spawnTime: config.nest.waitTime + 0.71,
       position: 410,
       orientation: -1
     }
@@ -56,14 +56,13 @@ const finishState = {
       }
     })
 
-    if (finishState.time < config.nest.waitTime + 0.45) {
+    if (finishState.time < config.nest.waitTime + 0.35) {
       nest.reset()
     }
 
-
     finishState.time += dt / 1000
 
-    if (finishState.time < config.nest.waitTime + 1.9) {
+    if (finishState.time < config.nest.waitTime + 1.4) {
       background.update(dt)
       ground.update(dt)
       flowers.update(dt)

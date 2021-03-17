@@ -8,7 +8,7 @@ const playState = {
     towers.nSpawned = 0
     bird.reset()
     towers.reset()
-    audio.playMusic(0.4)
+    audio.playMusic(0.3)
   },
 
   draw () {

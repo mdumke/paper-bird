@@ -5,7 +5,7 @@ const config = {
   },
 
   ground: {
-    speed: 0.2,
+    speed: 0.25,
     height: 25
   },
 
@@ -29,12 +29,12 @@ const config = {
 
   towers: {
     initialSpawnTime: 6.6,
-    minSpawnTime: 1.3,
+    minSpawnTime: 0.8,
     maxSpawnTime: 2.5,
-    maxNumber: 100,
+    maxNumber: 5,
     gap: {
-      sizes: [200, 220, 250, 300],
-      maxDiff: 500,
+      sizes: [210, 220, 230, 280],
+      maxDiff: 400,
       upperBoundary: 100,
       lowerBoundary: canvas.height - 100
     }
