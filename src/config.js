@@ -47,7 +47,7 @@ const config = {
       maxSpawnTime: 2.2,
       gap: {
         sizes: [210, 220, 260, 270],
-        maxDiff: 350,
+        maxDiff: 320,
         upperBoundary: 60,
         lowerBoundary: canvas.height - 60
       }
