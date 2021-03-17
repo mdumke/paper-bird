@@ -12,7 +12,7 @@ const finishState = {
     },
     {
       spawned: false,
-      spawnTime: config.nest.waitTime + 0.365,
+      spawnTime: config.nest.waitTime + 0.362,
       position: 400,
       orientation: 1
     },

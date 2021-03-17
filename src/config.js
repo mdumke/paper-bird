@@ -29,14 +29,28 @@ const config = {
 
   towers: {
     initialSpawnTime: 6.6,
-    minSpawnTime: 0.8,
-    maxSpawnTime: 2.5,
-    maxNumber: 5,
-    gap: {
-      sizes: [210, 220, 230, 280],
-      maxDiff: 400,
-      upperBoundary: 100,
-      lowerBoundary: canvas.height - 100
+    maxNumber: 100,
+
+    easy: {
+      minSpawnTime: 1.2,
+      maxSpawnTime: 2.5,
+      gap: {
+        sizes: [250, 260, 280, 310],
+        maxDiff: 300,
+        upperBoundary: 100,
+        lowerBoundary: canvas.height - 100
+      }
+    },
+
+    hard: {
+      minSpawnTime: 0.9,
+      maxSpawnTime: 2.2,
+      gap: {
+        sizes: [210, 220, 260, 270],
+        maxDiff: 350,
+        upperBoundary: 60,
+        lowerBoundary: canvas.height - 60
+      }
     }
   },
 

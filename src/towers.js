@@ -49,12 +49,13 @@ const towers = {
 
   setSpawnTime () {
     towers.spawnTime = utils.urand(
-      config.towers.minSpawnTime,
-      config.towers.maxSpawnTime)
+      towers.getSettings().minSpawnTime,
+      towers.getSettings().maxSpawnTime
+    )
   },
 
   getPosition () {
-    let gap = config.towers.gap
+    let gap = towers.getSettings().gap
     let size = utils.sample(gap.sizes)
     let newGap = towers.prevGap + utils.urand(-gap.maxDiff / 2, gap.maxDiff / 2)
 
@@ -67,5 +68,11 @@ const towers = {
       gap: newGap,
       gapSize: size
     }
+  },
+
+  getSettings () {
+    return towers.nSpawned < config.towers.maxNumber / 3
+      ? config.towers.easy
+      : config.towers.hard
   }
 }
