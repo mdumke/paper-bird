@@ -20,7 +20,7 @@ const finishRetryState = {
     canvas.drawText('Game Over', 200, 160, 40)
     canvas.drawText(`Score: ${playState.score || 0} points`, 200, 210, 24)
 
-    if (finishRetryState.time > 7) {
+    if (finishRetryState.time > 8) {
       canvas.drawText('Press SPACE to try again', 200, 400, 24)
     }
   },

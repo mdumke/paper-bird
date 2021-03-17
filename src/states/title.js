@@ -17,7 +17,7 @@ const titleState = {
     flowers.draw()
     canvas.drawText('Paper Bird', 200, 160, 40)
 
-    if (titleState.time > 2) {
+    if (titleState.time > 3) {
       canvas.drawText(`Press SPACE to fly`, 200, 210, 24)
     }
   },

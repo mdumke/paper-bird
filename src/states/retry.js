@@ -21,7 +21,7 @@ const retryState = {
       `Score: ${playState.score || 0} point${playState.score == 1 ? '' : 's'}`,
       200, 210, 24)
 
-    if (retryState.time > 7) {
+    if (retryState.time > 8) {
       canvas.drawText('Press SPACE to try again', 200, 400, 24)
     }
   },

@@ -6,6 +6,7 @@ const initState = {
     ground.draw()
     flowers.draw()
     graphics.displayPlayIcon()
+    canvas.drawText('Paper Bird', 200, 160, 40)
   },
 
   update (dt) {
