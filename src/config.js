@@ -43,11 +43,11 @@ const config = {
     },
 
     hard: {
-      minSpawnTime: 0.9,
-      maxSpawnTime: 2.2,
+      minSpawnTime: 1.0,
+      maxSpawnTime: 2.0,
       gap: {
-        sizes: [210, 220, 260, 270],
-        maxDiff: 320,
+        sizes: [215, 220, 260, 270],
+        maxDiff: 310,
         upperBoundary: 60,
         lowerBoundary: canvas.height - 60
       }
