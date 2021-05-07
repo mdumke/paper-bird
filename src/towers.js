@@ -36,11 +36,23 @@ const towers = {
       return
     }
 
-    const { gap, gapSize } = towers.getPosition()
-
-    towers.instances.push(new Tower(gap, -1))
-    towers.instances.push(new Tower(gap + gapSize))
+    towers.pushTowers(towers.getSettings().dropTowerProb)
     towers.nSpawned++
+  },
+
+  pushTowers (pDrop) {
+    // if necessary, drop a random tower, otherwise, add both
+    const { gap, gapSize } = towers.getPosition()
+    const drop = Math.random() < pDrop
+
+    if (drop) {
+      Math.random() < 0.5
+        ? towers.instances.push(new Tower(gap, -1, true))
+        : towers.instances.push(new Tower(gap + gapSize, 1, true))
+    } else {
+      towers.instances.push(new Tower(gap, -1, true))
+      towers.instances.push(new Tower(gap + gapSize))
+    }
   },
 
   spawnAt (gap, orientation = 1) {
@@ -71,8 +83,12 @@ const towers = {
   },
 
   getSettings () {
-    return towers.nSpawned < config.towers.maxNumber / 3
-      ? config.towers.easy
-      : config.towers.hard
+    if (towers.nSpawned < 30) {
+      return config.towers.easy
+    } else if (towers.nSpawned < 70) {
+      return config.towers.medium
+    } else {
+      return config.towers.hard
+    }
   }
 }

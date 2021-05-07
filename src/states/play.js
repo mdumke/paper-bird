@@ -51,7 +51,7 @@ const playState = {
 
   updateScore () {
     for (let t of towers.instances) {
-      if (t.orientation === -1) continue
+      if (!t.scorable) continue
 
       if (t.hasPassedBird() && !t.scored) {
         t.scored = true

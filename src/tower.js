@@ -1,11 +1,12 @@
 class Tower {
-  constructor (y, orientation = 1) {
+  constructor (y, orientation = 1, scorable = false) {
     this.img = images.tower
     this.x = canvas.width + this.img.width
     this.y = y
     this.width = this.img.width
     this.height = this.y
     this.orientation = orientation
+    this.scorable = scorable
     this.scored = false
   }
 

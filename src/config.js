@@ -32,10 +32,23 @@ const config = {
     maxNumber: 100,
 
     easy: {
+      dropTowerProb: 1,
       minSpawnTime: 1.2,
       maxSpawnTime: 2.5,
       gap: {
-        sizes: [250, 260, 280, 310],
+        sizes: [200],
+        maxDiff: 300,
+        upperBoundary: 100,
+        lowerBoundary: canvas.height - 100
+      }
+    },
+
+    medium: {
+      dropTowerProb: 0.3,
+      minSpawnTime: 1.2,
+      maxSpawnTime: 2.5,
+      gap: {
+        sizes: [270, 280, 290, 310],
         maxDiff: 300,
         upperBoundary: 100,
         lowerBoundary: canvas.height - 100
@@ -43,6 +56,7 @@ const config = {
     },
 
     hard: {
+      dropTowerProb: 0,
       minSpawnTime: 1.0,
       maxSpawnTime: 2.0,
       gap: {
