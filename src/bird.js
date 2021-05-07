@@ -13,7 +13,9 @@ const bird = {
 
   collidesWithTower (tower) {
     if (bird.y < -40) {
-      return bird.x + 69 > tower.x && bird.x < tower.x + tower.width
+      return tower.orientation === -1
+          && bird.x + 69 > tower.x
+          && bird.x < tower.x + tower.width
     }
 
     return (
