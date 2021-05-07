@@ -34,12 +34,16 @@ const retryState = {
 
     retryState.time += dt / 1000
 
-    if (retryState.time > 7 && controls.spaceBarPressed) {
+    if (controls.spaceBarPressed) {
       retryState.changeState = true
     }
 
     if (retryState.changeState && !controls.spaceBarPressed) {
       stateMachine.change('title')
     }
+  },
+
+  exit () {
+    audio.pause('gameOver')
   }
 }
