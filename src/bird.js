@@ -31,7 +31,7 @@ const bird = {
     return geometry.rectangleInCircle(rect, {
       x: bird.x + 69,
       y: bird.y + 27,
-      r: 17
+      r: 15
     })
   },
 
@@ -39,7 +39,7 @@ const bird = {
     return geometry.rectangleInCircle(rect, {
       x: bird.x + 43,
       y: bird.y + 30,
-      r: 17
+      r: 15
     })
   },
 
