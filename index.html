@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Paper Bird</title>
   <link rel="shortcut icon" type="image/ico" href="favicon.ico"/>
+  <link rel="manifest" href="manifest.json">
   <style>
     * {
       margin: 0;
@@ -19,11 +20,12 @@
       align-items: center;
       min-height: 95vh;
     }
-    .canvas-wrapper {
+    canvas {
       background-repeat: no-repeat;
-      width: 1066px;
-      height: 600px;
       cursor: pointer;
+      max-height: min(100vh, 600px);
+      max-width: min(100vw, 1066px);
+      aspect-ratio: 1066 / 600;
     }
     .hide-cursor {
       cursor: none;
@@ -31,9 +33,7 @@
   </style>
 </head>
 <body>
-  <div class="canvas-wrapper">
-    <canvas id="canvas" width="1066" height="600"></canvas>
-  </div>
+  <canvas id="canvas" width="1066" height="600"></canvas>
 
   <audio id="explosion" src="assets/audio/chicken-explosion.mp3" preload="auto"></audio>
   <audio id="ambience" src="assets/audio/birds-singing.mp3" preload="auto"></audio>
@@ -78,10 +78,14 @@
 
   <script>
     (() => {
-      document.querySelector('.canvas-wrapper').style.backgroundImage =
+      document.querySelector('canvas').style.backgroundImage =
         "url('assets/images/paper.png')"
 
       game.main()
+
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+      }
     })()
   </script>
 </body>
