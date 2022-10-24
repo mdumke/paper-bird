@@ -2,7 +2,7 @@
   "name": "Paper Bird",
   "short_name": "Paper Bird",
   "display": "standalone",
-  "background_color": "#fff",
+  "background_color": "#222",
   "start_url": ".",
   "icons": [
     {
